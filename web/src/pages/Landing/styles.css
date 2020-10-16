@@ -11,17 +11,17 @@
 #page-landing .content-wrapper {
   position: relative;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1129px;
 
   height: 100%;
-  max-height: 680px;
+  max-height: 786px;
 
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
 
-  background: url('../../images/landing.svg') no-repeat 80% center;
+  background: url('../../images/landing.svg') no-repeat 100% center;
 }
 
 #page-landing .content-wrapper main {
@@ -54,23 +54,74 @@
   text-align: right;
 }
 
-.content-wrapper .enter-app {
+.content-wrapper .disabled {
+  background: #e2e1df;
   position: absolute;
-  right: 0;
-  bottom: 0;
-
+  right: 693px;
+  bottom: 8px;
   width: 80px;
-  height: 80px;
-  background: #ffd666;
-  border-radius: 30px;
-
+  height: 158px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.2s;
+  pointer-events: none;
+}
 
+/* .active {
+  background: #ffd666;
+  cursor: pointer;
+} */
+
+
+.content-wrapper .enter-app {
+  position: absolute;
+  right: 693px;
+  bottom: 8px;
+  width: 80px;
+  height: 158px;
+  background: #ffd666;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color 0.2s;
 }
 
 .content-wrapper .enter-app:hover {
   background: #96feff;
+}
+
+.content-wrapper .select-container-group {
+  margin-top: 8px;
+}
+
+
+.content-wrapper .select-container-group .select-container {
+  margin-bottom: 8px;
+  width: 350px;
+
+}
+
+.content-wrapper .select-container select {
+  display: flex;
+  flex: 1;
+  width: 350px;
+  height: 74px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 24px;
+  font-family: Nunito, sans-serif;
+  font-weight: 700;
+
+  appearance: none;
+  background: #F0F0F5;
+  border-radius: 8px;
+  padding: 16px 24px;
+
+  border: 0;
+  font-size: 16px;
+  color: #49494e;
 }
