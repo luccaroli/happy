@@ -29,7 +29,7 @@ const Home: React.FC = () => {
       const { status } = await Location.requestPermissionsAsync()
 
       if (status !== 'granted') {
-        Alert.alert('Oooopa', 'precisamos da sua permisão para obter a localização')
+        Alert.alert('Oooopa, precisamos da sua permisão para obter a localização')
         return
       }
 

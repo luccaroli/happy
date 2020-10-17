@@ -20,6 +20,7 @@ interface Orphanage {
   latitude: number;
   longitude: number;
   about: string;
+  whatsapp: string;
   instructions: string;
   opening_hours: string;
   open_on_weekends: boolean;
@@ -40,6 +41,7 @@ export default function OrphanageDetails() {
     api.get(`orphanages/${params.id}`).then(response => {
       setOrphanage(response.data)
     })
+
   }, [params.id])
 
   if (!orphanage) {
@@ -53,6 +55,12 @@ export default function OrphanageDetails() {
   function handleGoogleMapsRoutes() {
     Linking.openURL(`https://www.google.com/maps/dir/?api=1&destination=${orphanage?.latitude},${orphanage?.longitude}`)
   }
+
+  function handleWhatsapp() {
+    Linking.openURL(`https://api.whatsapp.com/send?phone=55${orphanage?.whatsapp}&text=Olá, ${orphanage?.name}!.`)
+  }
+  
+  
 
   return (
     <ScrollView style={styles.container}>
@@ -124,12 +132,12 @@ export default function OrphanageDetails() {
           ) : (
             <View style={[styles.scheduleItem, styles.scheduleItemRed]}>
               <Feather name="info" size={40} color="#FF669D" />
-              <Text style={[styles.scheduleText, styles.scheduleTextRed]}>Atendemos fim de semana</Text>
+              <Text style={[styles.scheduleText, styles.scheduleTextRed]}>Não Atendemos fim de semana</Text>
             </View>
           )}
         </View>
 
-        <RectButton style={styles.contactButton} onPress={() => {}}>
+        <RectButton style={styles.contactButton} onPress={handleWhatsapp}>
           <FontAwesome name="whatsapp" size={24} color="#FFF" />
           <Text style={styles.contactButtonText}>Entrar em contato</Text>
         </RectButton>

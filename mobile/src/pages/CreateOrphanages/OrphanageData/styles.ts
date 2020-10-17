@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     color: '#5c8599',
     fontSize: 24,
     fontFamily: 'Nunito_700Bold',
-    marginBottom: 32,
     paddingBottom: 24,
     borderBottomWidth: 0.8,
     borderBottomColor: '#D3E2E6'
